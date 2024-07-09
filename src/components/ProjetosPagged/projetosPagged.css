@@ -5,6 +5,8 @@
 .projetos-item{
     display: flex;
     flex-direction: row;
+    border-bottom: 2px solid grey;
+    margin-bottom: var(--double-default-spacing);
 }
 
 
