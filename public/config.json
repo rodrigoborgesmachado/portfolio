@@ -1,0 +1,23 @@
+{
+    "QUESTOES_FEITAS":"questoes",
+    "QUANTIDADE_QUESTOES_RESPONDIDAS":"quantidade_questoes_respondidas",
+    "QUANTIDADE_QUESTOES_ACERTADAS":"quantidade_questoes_acertadas",
+    "LOGADO":"logado",
+    "USUARIO":"usuario",
+    "TOKEN":"token",
+    "ADMIN":"admin",
+    "CodigoUsuario":"codigousuario",
+    "Nome":"nomeUsuario",
+    "TEMPO_PARAM":"tempo",
+    "Historico": "historico",
+    "PaginaListagem": "PAGINALISTAGEM",
+    "FiltroProva": "FILTROPROVA",
+    "lastLink": "LASTLINK",
+    "filtroBancasSelecionadas":"FILTROBANCASSELECIONADAS",
+    "filtroProvasSelecionadas":"FILTROPROVASSELECIONADAS",
+    "filtroMateriasSelecionadas":"FILTROMATERIASSELECIONADAS",
+    "filtroAssuntosSelecionadas":"FILTROASSUNTOSSELECIONADAS",
+    "filtroProfessoresSelecionadas":"FILTROPROFESSORESSELECIONADAS",
+    "filtroTiposSelecionados":"FILTROTIPOSSELECIONADOS",
+    "pallete" : ["#72C9DA","#F8D962","#5EBD9B"]
+}
