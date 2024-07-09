@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import RoutesApp from "./routes";
+import React, { useContext, useEffect } from 'react';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import  ThemeContext from './context/ThemeContext/themeContext';
 
 function App() {
+  const { theme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer autoClose="2000"/>
+      <RoutesApp/>
     </div>
   );
 }

@@ -1,0 +1,11 @@
+.footer{
+    margin-top: calc(2 * var(--triple-default-spacing));
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-icones{
+    display: flex;
+    gap: var(--default-spacing);
+}

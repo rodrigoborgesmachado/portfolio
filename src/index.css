@@ -1,13 +1,221 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+:root {
+    /* Cor do background */
+    --background-color: #161623;
+  
+    /* Cor do header, footer e outros elementos principais */
+    --primary-color: #161623;
+  
+    /* Cor dos painéis */
+    --secundary-color: #4D5B7D;
+    /* Cor dos painéis */
+    --secundary-color-hover: #383838;
+  
+    /* Cor do texto nos painéis */
+    --text-color-primary-light: #cdd7f7;
+    --text-color-primary: #C9D1D9;
+    --text-color-secondary: #FFFFFF;
+    --text-color-accent: #2CDEBF;
+    --text-color-code: #426278;
+    --text-color-button: #FFFFFF;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+    /* Cores do botão principal */
+    --button-color-primary: #8A2BE2;
+    --button-color-primary-hover: #4B0082;
+    --button-color-primary-wrong: #B00020;
+    --button-color-primary-wrong-hover: #CF6679;
+  
+    --button-color-primary-right: rgb(56, 142, 60);
+    --button-color-primary-right-hover: rgb(56, 142, 60, 0.9);
+  
+    --button-color-secondary: rgb(37, 26, 166);
+    --separator-color-primary: rgba(173, 179, 187, 0.48);;
+    --shadow-color-primary: rgba(0, 0, 0, .12);
+    --shadow-color-secondary: rgba(0, 0, 0, .12);
+    --separator-marker-color-primary: #006B59;
+  
+    --block-color: #FAFDFA;
+    --block-color-secundary: #FAFDFA;
+  
+    --color-surface: #FAFDFA;
+    --color-surface-variant: #1F1F1F;
+  
+    --loader-color: #8A2BE2;
+    --panel-border-color : #eaebeb;
+
+    --border-color: gray;
+  
+    --modal-background-color:rgba(255, 255, 255, 0.25);
+  
+    --footer-heigth:48px;
+    --icon-heigth:24px;
+    --header-height: 56px;
+
+    --default-spacing:8px;
+    --double-default-spacing:calc(2 * var(--default-spacing));
+    --triple-default-spacing:calc(3 * var(--default-spacing));
+  
+    --default-max-width:1080px;
+  
+    --default-border-radius:8px;
+    --default-border-radius-extra:16px;
+
+    --transient-color-primary: #8A2BE2;
+    --transient-color-second: #4B0082;
+    --transient-color-third: #B00020;
+    --transient-color-fourfh: #CF6679;
+
+    --loader-background-color: #3c3c3c;
+    --loader-color: #bb86fc;
+
+    --xl6: 4rem;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  [data-theme='light'] {
+    /* Cor do background */
+    --background-color: #dddddd;
+    
+    /* Cor do header, footer e outros elementos principais */
+    --primary-color: #f0f0f0;
+    
+    /* Cor dos painéis */
+    --secundary-color: #e0e0e0;
+    /* Cor dos painéis */
+    --secundary-color-hover: #d0d0d0;
+    
+    /* Cor do texto nos painéis */
+    --text-color-primary-light: #2e4e4e;
+    --text-color-primary: #1e1e1e;
+    --text-color-secondary: #333333;
+    --text-color-accent: #007bff;
+    --text-color-code: #3d3d3d;
+    --text-color-button: #ffffff;
+  
+    /* Cores do botão principal */
+    --button-color-primary: #007bff;
+    --button-color-primary-hover: #0056b3;
+    --button-color-primary-wrong: #dc3545;
+    --button-color-primary-wrong-hover: #c82333;
+    
+    --button-color-primary-right: #28a745;
+    --button-color-primary-right-hover: #218838;
+    
+    --button-color-secondary: #6c757d;
+    --separator-color-primary: rgba(0, 0, 0, 0.1);
+    --shadow-color-primary: rgba(0, 0, 0, 0.1);
+    --shadow-color-secondary: rgba(0, 0, 0, 0.1);
+    --separator-marker-color-primary: #006b59;
+    
+    --block-color: #ffffff;
+    --block-color-secundary: #f8f9fa;
+    
+    --color-surface: #ffffff;
+    --color-surface-variant: #f0f0f0;
+    
+    --loader-color: #007bff;
+    --panel-border-color : #cccccc;
+    
+    --modal-background-color: rgba(255, 255, 255, 0.9);
+    
+    --footer-heigth: 24px;
+  
+    --default-spacing: 8px;
+    --double-default-spacing: calc(2 * var(--default-spacing));
+    --triple-default-spacing: calc(3 * var(--default-spacing));
+    
+    --default-max-width: 1080px;
+  
+    --transient-color-primary: #007bff;
+    --transient-color-second: #0056b3;
+    --transient-color-third: #dc3545;
+    --transient-color-fourfh: #c82333;
+
+    --loader-background-color: #f3f3f3;
+    --loader-color: #1976d2;
+  }
+  
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color-primary);
+    padding: auto;
+    font-family: open sans,system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+    line-height: 1.75;
+  }
+
+  .App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 960px;
+    min-height: 100vh;
+    margin: auto;
+  }
+
+  .container{
+    width: 100%;
+    height: 100%;
+    padding: var(--default-spacing);
+    margin: auto;
+  }
+
+  .presentation{
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .presentation h1{
+    font-size: var(--xl6);
+  }
+  
+  .option-link {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .option-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--border-color);
+    transition: width 0.5s ease-in-out; 
+  }
+  
+  .option-link:hover::after {
+    width: 100%;
+  }
+
+  .projects h2{
+    margin-bottom: var(--double-default-spacing);
+  }
+
+  .paginacao{
+    padding-top: var(--triple-default-spacing);
+    display: flex;
+    justify-content: right;
+  }
+
+  .tittle-form{
+    border-bottom: 2px solid grey;
+  }
+
+  .input-pattern{
+    background-color: transparent !important; 
+    color: var(--text-color-primary) !important;
+  }
+
+  .input-pattern:focus {
+    border-color: var(--focus-border-color); 
+  }

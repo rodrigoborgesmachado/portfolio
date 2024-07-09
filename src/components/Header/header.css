@@ -1,0 +1,17 @@
+
+.navBar{
+    padding: var(--default-spacing);
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    height: var(--header-height);
+  }
+
+  .navBar-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px
+  }

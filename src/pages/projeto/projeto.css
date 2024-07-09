@@ -1,0 +1,39 @@
+.projeto-full{
+    margin: auto;
+    padding: var(--triple-default-spacing);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-full sub{
+    margin-bottom: var(--triple-default-spacing);
+}
+
+.projeto-full img{
+    margin-bottom: var(--triple-default-spacing);
+    width: 100%;
+}
+
+.projeto-link{
+    padding-top: var(--triple-default-spacing);
+}
+
+.projeto-link a{
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--text-color-primary);
+}
+
+.projeto-full h4, h3 {
+    text-align: justify;
+    font-weight: normal;
+    text-decoration: none;
+}
+  
+.projeto-full a {
+    cursor: pointer;
+    text-decoration: none; 
+    font-weight: normal !important;
+    color: inherit; 
+}
