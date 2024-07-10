@@ -38,6 +38,24 @@ export default function ProjetosPagged({resum = true, tipo=0}){
         navigate(`/projeto/${id}`, {replace: true});
     }
 
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+    
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+    
+        return `${day}/${month}/${year}`;
+    }
+
+    function openPostagens(){
+        navigate(`/postagens`, {replace: true});
+    }
+
+    function openProjetos(){
+        navigate(`/projetos`, {replace: true});
+    }
+
     if(loadding){
         return(
             <Loader/>
@@ -46,51 +64,30 @@ export default function ProjetosPagged({resum = true, tipo=0}){
 
     return(
         <div className={ resum ? "projetosPagged" : "projetosPagged-full"}>
-            {
-                resum ?
-                <></>
-                :
-                <div className='apresentacao-projetos'>
-                    <h2 className='option-link'>
-                        {tipo == 0 ? 'Projetos' : 'Postagens'}
-                    </h2>
-                </div>
-            }
+            <div className='apresentacao-projetos'>
+                <h2 className='option-link' onClick={() => tipo == 0 ? openProjetos() : openPostagens()}>
+                    {tipo == 0 ? 'Projetos' : 'Postagens'} ({quantity}):
+                </h2>
+            </div>
             {
                 projetos.map((item, id) => {
                     return(
                         <>
-                        {
-                            resum ?
                             <div className="projetos-item" id={id}>
                                 <div className="projetos-item-imagem">
                                     <img src={item.capa} alt={item.titulo}/>
                                 </div>
                                 <div className="projetos-item-descricao">
                                     <h3 className="option-link" onClick={() => abrirProjeto(item.id)}>{item.titulo}</h3>
+                                    <sub>Publicação: {formatDate(item.created)}</sub>
                                     <h4 className="option-link" dangerouslySetInnerHTML={createMarkup(item.intro)}></h4>
                                 </div>
                             </div>
-                            :
-                            <div className="projetos-item" id={id}>
-                                <div className="projetos-item-imagem">
-                                    <img src={item.capa} alt={item.titulo}/>
-                                </div>
-                                <div className="projetos-item-descricao">
-                                    <h3 className="option-link" onClick={() => abrirProjeto(item.id)}>{item.titulo}</h3>
-                                    <h4 className="option-link" dangerouslySetInnerHTML={createMarkup(item.intro)}></h4>
-                                </div>
-                            </div>
-                        }
                         </>
                     )
                 })
             }
-            {
-                resum ?
-                <></>
-                :
-                <div className='paginacao'>
+            <div className='paginacao'>
                 {
                     quantity > 0 ?
                         <Stack spacing={4}>
@@ -99,15 +96,14 @@ export default function ProjetosPagged({resum = true, tipo=0}){
                         color: 'var(--text-color-primary)'},
                     '& .MuiPaginationItem-root': {
                         color: 'var(--text-color-primary)',
-                  
-                  }}} count={Math.ceil(quantity / max)} page={parseInt(page)} showFirstButton showLastButton onChange={handleChange} />
+                
+                }}} count={Math.ceil(quantity / max)} page={parseInt(page)} showFirstButton showLastButton onChange={handleChange} />
                         </Stack>
                         :
                         <>
                         </>
                 }
             </div>
-            }
         </div>
     )
 }

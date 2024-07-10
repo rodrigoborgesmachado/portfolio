@@ -30,12 +30,14 @@ export default function Projeto({}){
         <div className="projeto-full">
             <h1>{projeto.titulo}</h1>
             <sub>{projeto.intro}</sub>
-            {
-                projeto.link ? 
-                <img src={projeto.capa} alt={projeto.titulo} onClick={() =>  window.open(projeto.link, '_blank', 'noopener,noreferrer')}/>
-                :
-                <img src={projeto.capa} alt={projeto.titulo}/>
-            }
+            <div className="projeto-img">
+                {
+                    projeto.link ? 
+                    <img src={projeto.capa} alt={projeto.titulo} onClick={() =>  window.open(projeto.link, '_blank', 'noopener,noreferrer')}/>
+                    :
+                    <img src={projeto.capa} alt={projeto.titulo}/>
+                }
+            </div>
             <h4 dangerouslySetInnerHTML={createMarkup(projeto.descricao)}></h4>
             {
                 projeto.link ?

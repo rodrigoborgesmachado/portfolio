@@ -10,9 +10,18 @@
     margin-bottom: var(--triple-default-spacing);
 }
 
+.projeto-img{
+    display: flex;
+    justify-content: center;
+}
+
 .projeto-full img{
     margin-bottom: var(--triple-default-spacing);
-    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block; 
+    margin: 0 auto; 
 }
 
 .projeto-link{

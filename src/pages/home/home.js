@@ -5,13 +5,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Home(){
     const navigate = useNavigate();
 
-    function openProjetos(){
-        navigate(`/projetos`, {replace: true});
-    }
-
-    function openPostagens(){
-        navigate(`/postagens`, {replace: true});
-    }
+    
 
     return(
         <div className="container">
@@ -24,15 +18,9 @@ export default function Home(){
                 </h3>
             </div>
             <div className='projects'>
-                <h2 className='option-link' onClick={() => openProjetos()}>
-                    Projetos:
-                </h2>
                 <ProjetosPagged tipo={0}/>
             </div>
             <div className='posts'>
-                <h2 className='option-link' onClick={() => openPostagens()}>
-                    Postagens:
-                </h2>
                 <ProjetosPagged tipo={1}/>
             </div>
         </div>

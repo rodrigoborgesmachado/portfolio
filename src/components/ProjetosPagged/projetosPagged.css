@@ -1,5 +1,6 @@
 .projetosPagged{
     padding: var(--double-default-spacing);
+    text-align: justify;
 }
 
 .projetos-item{
@@ -19,10 +20,28 @@
 
 .projetosPagged-full{
     min-height: 80vh;
+    text-align: justify;
     margin: auto;
     padding: var(--triple-default-spacing);
 }
 
 .apresentacao-projetos {
     padding: var(--triple-default-spacing);
+}
+
+.projetos-item-descricao {
+    display: flex;
+    flex-direction: column;
+}
+
+.projetos-item-descricao h4{
+    font-weight: normal;
+    text-decoration: none;
+    cursor: auto;
+}
+
+.projetos-item-descricao sub{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--default-spacing);
 }
