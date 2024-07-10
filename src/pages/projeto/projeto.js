@@ -14,11 +14,23 @@ export default function Projeto({}){
     useEffect(() => {
         api.get('/Postagem/getById?id=' + id)
         .then(response => {
+            window.scrollTo(0, 0);
             setProjeto(response.data.object);
             setLoadding(false);
         })
     }, [])
+    
     function createMarkup(text) { return {__html: text}; };
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+    
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+    
+        return `${day}/${month}/${year}`;
+    }
 
     if(loadding){
         return(
@@ -29,6 +41,7 @@ export default function Projeto({}){
     return(
         <div className="projeto-full">
             <h1>{projeto.titulo}</h1>
+            <sub>{formatDate(projeto.created)}</sub>
             <sub>{projeto.intro}</sub>
             <div className="projeto-img">
                 {
