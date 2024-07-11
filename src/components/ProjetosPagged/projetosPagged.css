@@ -8,6 +8,7 @@
     flex-direction: column;
     border-bottom: 2px solid grey;
     margin-bottom: var(--double-default-spacing);
+    padding-bottom: var(--default-spacing);
 }
 
 .projetos-item-imagem{
@@ -34,7 +35,6 @@
         display: flex;
         flex-direction: row;
         border-bottom: 2px solid grey;
-        margin-bottom: var(--double-default-spacing);
         width: 100%;
     }
     .projetos-item-imagem img {
