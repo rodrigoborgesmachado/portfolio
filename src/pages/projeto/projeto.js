@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import api from "../../services/api";
 import Loader from '../../components/Loader/loader';
+import DownloadIcon from '@mui/icons-material/Download';
 
 export default function Projeto({}){
     const navigate = useNavigate();
@@ -40,7 +41,14 @@ export default function Projeto({}){
 
     return(
         <div className="projeto-full">
-            <h1>{projeto.titulo}</h1>
+            <div className='projeto-title-div' onClick={() =>  window.open(projeto.link, '_blank', 'noopener,noreferrer')}>
+                <h1 className='projeto-title'>
+                    {projeto.titulo}
+                </h1>
+                <div className='projeto-download-icon'>
+                    {projeto.tipoPostagem == 1 ? <DownloadIcon fontSize="large"/> : <></>}
+                </div>
+            </div>
             <sub>{formatDate(projeto.created)}</sub>
             <sub>{projeto.intro}</sub>
             <div className="projeto-img">

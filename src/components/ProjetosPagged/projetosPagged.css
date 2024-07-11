@@ -20,10 +20,12 @@
     height: 20rem;
     margin-right: 1rem;
     border-radius: .5rem;
+    cursor: pointer;
 }
 .projetos-item-descricao {
     display: flex;
     flex-direction: column;
+    width: 100%;
     padding: var(--default-spacing);
 }
 
@@ -33,6 +35,7 @@
         flex-direction: row;
         border-bottom: 2px solid grey;
         margin-bottom: var(--double-default-spacing);
+        width: 100%;
     }
     .projetos-item-imagem img {
         width: 10rem;
@@ -59,8 +62,6 @@
     padding: var(--triple-default-spacing);
 }
 
-
-
 .projetos-item-descricao h4{
     font-weight: normal;
     text-decoration: none;
@@ -71,4 +72,14 @@
     display: flex;
     flex-direction: column;
     margin-bottom: var(--default-spacing);
+}
+
+.projetos-item-titulo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.projetos-item-titulo a{
+    text-decoration: none;
+    color: var(--text-color-primary);
 }

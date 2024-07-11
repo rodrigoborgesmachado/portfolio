@@ -30,7 +30,15 @@ export default function ProjetosPagged({resum = true, tipo=0}){
 
     const handleChange = (event, value) => {
         setPage(value);
+        scrollToDiv()
     };
+
+    function scrollToDiv() {
+        const targetDiv = document.getElementById(tipo == 0 ? 'projetos' : 'postagens');
+        if (targetDiv) {
+          targetDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
 
     function createMarkup(text) { return {__html: text}; };
 
@@ -64,7 +72,7 @@ export default function ProjetosPagged({resum = true, tipo=0}){
 
     return(
         <div className={ resum ? "projetosPagged" : "projetosPagged-full"}>
-            <div className='apresentacao-projetos'>
+            <div className='apresentacao-projetos' id={tipo == 0 ? 'projetos' : 'postagens'}>
                 <h2 className='option-link' onClick={() => tipo == 0 ? openProjetos() : openPostagens()}>
                     {tipo == 0 ? 'Projetos' : 'Postagens'} ({quantity}):
                 </h2>
@@ -73,12 +81,15 @@ export default function ProjetosPagged({resum = true, tipo=0}){
                 projetos.map((item, id) => {
                     return(
                         <>
-                            <div className="projetos-item" id={id}>
+                            <div className="projetos-item" key={id}>
                                 <div className="projetos-item-imagem">
-                                    <img src={item.capa} alt={item.titulo}/>
+                                    <img src={item.capa} alt={item.titulo} onClick={() => abrirProjeto(item.id)}/>
                                 </div>
                                 <div className="projetos-item-descricao">
-                                    <h3 className="option-link" onClick={() => abrirProjeto(item.id)}>{item.titulo}</h3>
+                                    <div className='projetos-item-titulo'>
+                                        <h3 className="option-link" onClick={() => abrirProjeto(item.id)}>{item.titulo}</h3>
+                                        <a className="option-link" target='_blank' href={item.link}>Acessar</a>
+                                    </div>
                                     <sub>Publicação: {formatDate(item.created)}</sub>
                                     <h4 className="option-link" dangerouslySetInnerHTML={createMarkup(item.intro)}></h4>
                                 </div>

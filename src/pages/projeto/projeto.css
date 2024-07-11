@@ -13,15 +13,17 @@
 .projeto-img{
     display: flex;
     justify-content: center;
+    align-items: center; /* Optional: if you want to center vertically as well */
+    width: 100%; /* Ensure the container takes the full width */
+    text-align: center; /* Center the contents textually, though flex should handle it */
 }
 
 .projeto-full img{
-    margin-bottom: var(--triple-default-spacing);
     max-width: 100%;
     height: auto;
     object-fit: cover;
     display: block; 
-    margin: 0 auto; 
+    margin: auto; 
 }
 
 .projeto-link{
@@ -45,4 +47,17 @@
     text-decoration: none; 
     font-weight: normal !important;
     color: inherit; 
+}
+
+.projeto-title-div{
+    display: flex;
+    width: 100%;
+}
+
+.projeto-download-icon {
+    margin: 12px;
+}
+
+.projeto-title, .projeto-download-icon{
+    cursor: pointer;
 }
