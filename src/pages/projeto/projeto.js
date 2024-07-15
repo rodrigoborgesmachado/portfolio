@@ -33,6 +33,11 @@ export default function Projeto({}){
         return `${day}/${month}/${year}`;
     }
 
+    function enviarFeedBack(titulo){
+        localStorage.setItem('Assunto', titulo);
+        navigate(`/contatos/assuntos`, {replace: true});
+    }
+
     if(loadding){
         return(
             <Loader/>
@@ -70,6 +75,10 @@ export default function Projeto({}){
                 :
                 <></>
             }
+            <div className='enviarFeedBack'>
+                <a onClick={() => enviarFeedBack(projeto.titulo)}>Enviar FeedBack</a>
+
+            </div>
         </div>
     )
 }

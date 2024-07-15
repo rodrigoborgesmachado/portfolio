@@ -1,12 +1,7 @@
 import './home.css';
 import ProjetosPagged from '../../components/ProjetosPagged/projetosPagged';
-import { useNavigate } from 'react-router-dom';
 
 export default function Home(){
-    const navigate = useNavigate();
-
-    
-
     return(
         <div className="container">
             <div className="presentation">

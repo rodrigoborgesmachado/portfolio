@@ -61,3 +61,22 @@
 .projeto-title, .projeto-download-icon{
     cursor: pointer;
 }
+
+.enviarFeedBack{
+    display: flex;
+    margin-top: var(--default-spacing);
+}
+
+.enviarFeedBack a{
+    border-radius: var(--default-spacing);
+    color: var(--text-color-primary);
+    text-decoration: double;
+    cursor: pointer;
+    border-bottom: 2px solid gray;
+    border-top: 2px solid gray;
+}
+
+.enviarFeedBack button :hover
+{
+    background-color: var(--transient-color-second);
+}

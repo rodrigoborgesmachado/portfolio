@@ -4,11 +4,12 @@ import api from '../../services/api';
 import { toast } from 'react-toastify';
 import Loader from '../../components/Loader/loader';
 
-export default function Contato(){
+export default function Contato({usaAssunto}){
     const[nome, setNome] = useState('');
     const[email, setEmail] = useState('');
     const[empresa, setEmpresa] = useState('');
     const[escola, setEscola] = useState('');
+    const[assunto, setAssunto] = useState(usaAssunto ? localStorage.getItem('Assunto') : '');
     const[mensagem, setMensagem] = useState('');
     const[loading, setLoading] = useState(false);
 
@@ -30,6 +31,7 @@ export default function Contato(){
                 "Email": email,
                 "Empresa": empresa,
                 "Escola": escola,
+                "Assunto": assunto,
                 "Mensagem": mensagem
             };
             
@@ -85,6 +87,12 @@ export default function Contato(){
                         <div className='form-contact-line-item'>
                             <h4>Instituição de ensino (opcional)</h4>
                             <input className='input-pattern' type='text' name='escola' id='escola' value={escola} onChange={(e) => setEscola(e.target.value)} placeholder='UFU'/>
+                        </div>
+                    </div>
+                    <div className='form-contact-line'>
+                        <div className='form-contact-line-item-message'>
+                            <h4>Assunto*</h4>
+                            <input className='input-pattern' type='text' name='assunto' id='assunto' value={assunto} onChange={(e) => setAssunto(e.target.value)} placeholder='Contato'/>
                         </div>
                     </div>
                     <div className='form-contact-line'>

@@ -29,6 +29,12 @@
     border-radius: var(--default-border-radius);
 }
 
+.form-contact-line-item-message input{
+    width: 100%;
+    padding: var(--default-spacing);
+    border-radius: var(--default-border-radius);
+}
+
 .form-contact-line-item-message{
     width: 100%;
     height: 100%;

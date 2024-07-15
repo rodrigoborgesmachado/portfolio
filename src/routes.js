@@ -14,7 +14,8 @@ export default function RoutesApp(){
                 <Route path='/projeto/:id' element={<Projeto/>}/>
                 <Route path='/projetos' element={<ProjetosPagged resum={false} tipo={0}/>}/>
                 <Route path='/postagens' element={<ProjetosPagged resum={false} tipo={1}/>}/>
-                <Route path='/contatos' element={<Contato/>}/>
+                <Route path='/contatos/assuntos' element={<Contato usaAssunto={true}/>}/>
+                <Route path='/contatos/' element={<Contato usaAssunto={false}/>}/>
                 <Route path='/' element={<Home/>}/>
             </Routes>
             <Footer/>
