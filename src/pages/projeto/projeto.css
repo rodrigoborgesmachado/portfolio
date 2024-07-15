@@ -80,3 +80,13 @@
 {
     background-color: var(--transient-color-second);
 }
+
+.curtidas{
+    margin-top: var(--triple-default-spacing);
+    display: flex;
+    justify-content: right;
+}
+
+.curtidas div{
+    margin: var(--default-spacing);
+}

@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import api from "../../services/api";
 import Loader from '../../components/Loader/loader';
 import DownloadIcon from '@mui/icons-material/Download';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import { toast } from 'react-toastify';
 
 export default function Projeto({}){
     const navigate = useNavigate();
@@ -13,13 +16,18 @@ export default function Projeto({}){
     const[loadding, setLoadding] = useState(true);
 
     useEffect(() => {
+        buscaPostagem(true);
+    }, [])
+
+    function buscaPostagem(top){
         api.get('/Postagem/getById?id=' + id)
         .then(response => {
-            window.scrollTo(0, 0);
+            if(top)
+                window.scrollTo(0, 0);
             setProjeto(response.data.object);
             setLoadding(false);
         })
-    }, [])
+    }
     
     function createMarkup(text) { return {__html: text}; };
 
@@ -36,6 +44,14 @@ export default function Projeto({}){
     function enviarFeedBack(titulo){
         localStorage.setItem('Assunto', titulo);
         navigate(`/contatos/assuntos`, {replace: true});
+    }
+
+    function sendLike(positive, porjectId){
+        api.post((positive ? 'Postagem/like' : 'Postagem/dislike') + '?postagemId=' + porjectId)
+        .then(_ => {
+            setLoadding(true);
+            buscaPostagem(false);
+        });
     }
 
     if(loadding){
@@ -77,7 +93,17 @@ export default function Projeto({}){
             }
             <div className='enviarFeedBack'>
                 <a onClick={() => enviarFeedBack(projeto.titulo)}>Enviar FeedBack</a>
-
+            </div>
+            <div className='curtidas'>
+                <div className='curtidas-like'>
+                    <ThumbUpIcon className='option-link' onClick={() => sendLike(true, projeto.id)} />
+                </div>
+                <div className='curtidas-dislike'>
+                    <ThumbDownIcon className='option-link' onClick={() => sendLike(false, projeto.id)}/>
+                </div>
+                <div className='curtidas-quantidade'>
+                    <h4>{projeto.curtidas}</h4>
+                </div>
             </div>
         </div>
     )
