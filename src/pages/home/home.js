@@ -9,7 +9,7 @@ export default function Home(){
                     Hello,
                 </h1>
                 <h3>
-                    Seja bem vindo ao habitate natural de Rodrigo Machado
+                    Seja bem vindo ao habitat natural de Rodrigo Machado
                 </h3>
             </div>
             <div className='projects'>
