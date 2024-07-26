@@ -20,7 +20,7 @@ export default function ProjetosPagged({resum = true, tipo=0}){
 
     function BuscaProjetos(){
         setLoadding(true);
-        api.get(`/Postagem/pagged?page=${page}&quantity=${max}&tipoPostagem=${tipo == 0 ? 'Featured_Projects' : 'Psico'}`)
+        api.get(`/Postagem/pagged?page=${page}&quantity=${max}&tipoPostagem=${tipo == 0 ? 'Featured_Projects' : 'Articles'}`)
         .then(response => {
             setQuantity(response.data.total);
             setProjetos(response.data.object);
