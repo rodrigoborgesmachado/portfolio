@@ -74,7 +74,7 @@ export default function ProjetosPagged({resum = true, tipo=0}){
         <div className={ resum ? "projetosPagged" : "projetosPagged-full"}>
             <div className='apresentacao-projetos' id={tipo == 0 ? 'projetos' : 'postagens'}>
                 <h2 className='option-link' onClick={() => tipo == 0 ? openProjetos() : openPostagens()}>
-                    {tipo == 0 ? 'Projetos' : 'Postagens'} ({quantity}):
+                    {tipo == 0 ? 'Projetos' : 'Publicações'} ({quantity}):
                 </h2>
             </div>
             {
