@@ -1,5 +1,6 @@
 import './home.css';
 import ProjetosPagged from '../../components/ProjetosPagged/projetosPagged';
+import RepositoryPagged from '../../components/RepositoryPagged/repositoryPagged';
 
 export default function Home(){
     return(
@@ -17,6 +18,9 @@ export default function Home(){
             </div>
             <div className='posts'>
                 <ProjetosPagged tipo={1}/>
+            </div>
+            <div className='posts'>
+                <RepositoryPagged/>
             </div>
         </div>
     )

@@ -5,6 +5,7 @@ import Home from './pages/home/home';
 import Projeto from './pages/projeto/projeto';
 import ProjetosPagged from './components/ProjetosPagged/projetosPagged';
 import Contato from './pages/contato/contato';
+import Repositorio from './pages/repositorio/repositorio';
 
 export default function RoutesApp(){
     return(
@@ -12,6 +13,7 @@ export default function RoutesApp(){
             <Header/>
             <Routes>
                 <Route path='/projeto/:id' element={<Projeto/>}/>
+                <Route path='/repositorio/:id' element={<Repositorio/>}/>
                 <Route path='/projetos' element={<ProjetosPagged resum={false} tipo={0}/>}/>
                 <Route path='/postagens' element={<ProjetosPagged resum={false} tipo={1}/>}/>
                 <Route path='/contatos/assuntos' element={<Contato usaAssunto={true}/>}/>
