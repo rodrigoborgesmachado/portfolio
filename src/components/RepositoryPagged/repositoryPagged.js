@@ -69,7 +69,7 @@ export default function RepositoryPagged(){
         <div className="repositoriosPagged">
             <div className='apresentacao-repositorios' id='repositorios'>
                 <h2 className='option-link' onClick={() => openRepositorio()}>
-                    Respositórios ({quantity}):
+                    Respositórios Git ({quantity}):
                 </h2>
             </div>
             {
