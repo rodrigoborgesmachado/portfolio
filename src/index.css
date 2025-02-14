@@ -1,6 +1,6 @@
 :root {
     /* Cor do background */
-    --background-color: #161623;
+    --background-color: #1E1E1E;
   
     /* Cor do header, footer e outros elementos principais */
     --primary-color: #161623;
@@ -11,8 +11,8 @@
     --secundary-color-hover: #383838;
   
     /* Cor do texto nos painéis */
-    --text-color-primary-light: #cdd7f7;
-    --text-color-primary: #C9D1D9;
+    --text-color-primary-light: #e2e8fc;
+    --text-color-primary: #e1e9f0;
     --text-color-secondary: #FFFFFF;
     --text-color-accent: #2CDEBF;
     --text-color-code: #426278;

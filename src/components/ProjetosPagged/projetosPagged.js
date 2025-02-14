@@ -26,6 +26,11 @@ export default function ProjetosPagged({resum = true, tipo=0}){
             setProjetos(response.data.object);
             setLoadding(false);
         })
+        .catch(() => {
+            setQuantity(0);
+            setProjetos([]);
+            setLoadding(false);
+        })
     }
 
     const handleChange = (event, value) => {

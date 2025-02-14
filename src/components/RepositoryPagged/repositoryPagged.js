@@ -25,6 +25,11 @@ export default function RepositoryPagged(){
             setRepositorios(response.data.object);
             setLoadding(false);
         })
+        .catch(() => {
+            setQuantity(0);
+            setRepositorios([]);
+            setLoadding(false);
+        })
     }
 
     const handleChange = (event, value) => {
