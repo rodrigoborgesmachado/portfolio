@@ -4,6 +4,7 @@
     min-height: 80vh;
     display: flex;
     flex-direction: column;
+    max-width: 100vw;
 }
 
 .projeto-full sub{
@@ -26,9 +27,11 @@
     margin: auto; 
 }
 
-.projeto-link{
+.projeto-link {
     padding-top: var(--triple-default-spacing);
+    word-break: break-all;
 }
+
 
 .projeto-link a{
     text-decoration: none;
