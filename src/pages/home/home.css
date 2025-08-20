@@ -1,3 +1,113 @@
-.posts{
-    padding-top: var(--triple-default-spacing);
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--double-default-spacing);
+    flex-direction: column;
+    animation: fadeIn 1s ease forwards;
+}
+
+.presentation h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.typing {
+    border-right: 3px solid var(--primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Botão de chamada para ação */
+.cta-button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+    font-size: 1rem;
+    border-radius: 25px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-color-hover);
+}
+
+/* Seções */
+.projects-section,
+.posts-section,
+.repos-section {
+    padding: var(--triple-default-spacing) var(--double-default-spacing);
+    max-width: 1200px;
+    margin: auto;
+}
+:root {
+    --home-button-bg: #41404b;
+    --home-button-hover: #2e2d39;
+}
+
+[data-theme="dark"] {
+    --home-button-bg: #6366f1;
+    --home-button-hover: #4f46e5;
+}
+
+.cta-button {
+    background-color: var(--home-button-bg);
+}
+
+.cta-button:hover {
+    background-color: var(--home-button-hover);
+}
+
+.projects-section h2,
+.posts-section h2,
+.repos-section h2 {
+    margin-bottom: var(--default-spacing);
+    font-size: 1.8rem;
+}
+
+/* Animações de entrada */
+.fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-section:nth-child(2) { animation-delay: 0.2s; }
+.fade-section:nth-child(3) { animation-delay: 0.4s; }
+.fade-section:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .presentation h1 {
+        font-size: 2.4rem;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+    }
 }
