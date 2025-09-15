@@ -5,6 +5,7 @@ import api from "../../services/api";
 import Loader from '../../components/Loader/loader';
 import DownloadIcon from '@mui/icons-material/Download';
 import ReadmeComponent from "../../components/ReadmeComponent/readmeComponet";
+import PacmanLoader from "../../components/PacmanLoader/PacmanLoader";
 
 export default function Repositorio({}){
     const navigate = useNavigate();
@@ -43,7 +44,7 @@ export default function Repositorio({}){
 
     if(loadding){
         return(
-            <Loader/>
+            <PacmanLoader/>
         )
     }
 

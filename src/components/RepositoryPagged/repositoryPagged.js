@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import Loader from './../Loader/loader.js';
+import PacmanLoader from '../PacmanLoader/PacmanLoader.js';
 
 export default function RepositoryPagged(){
     const navigate = useNavigate();
@@ -66,7 +67,7 @@ export default function RepositoryPagged(){
 
     if(loadding){
         return(
-            <Loader/>
+            <PacmanLoader/>
         )
     }
 

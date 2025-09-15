@@ -8,6 +8,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { toast } from 'react-toastify';
+import PacmanLoader from '../../components/PacmanLoader/PacmanLoader';
 
 export default function Projeto({}){
     const navigate = useNavigate();
@@ -56,7 +57,7 @@ export default function Projeto({}){
 
     if(loadding){
         return(
-            <Loader/>
+            <PacmanLoader/>
         )
     }
 

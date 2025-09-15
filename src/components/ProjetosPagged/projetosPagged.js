@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import Loader from './../Loader/loader.js';
+import PacmanLoader from '../PacmanLoader/PacmanLoader.js';
 
 export default function ProjetosPagged({resum = true, tipo=0}){
     const navigate = useNavigate();
@@ -71,7 +72,7 @@ export default function ProjetosPagged({resum = true, tipo=0}){
 
     if(loadding){
         return(
-            <Loader/>
+            <PacmanLoader/>
         )
     }
 

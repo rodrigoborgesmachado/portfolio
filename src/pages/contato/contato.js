@@ -3,6 +3,7 @@ import { useState } from 'react';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
 import Loader from '../../components/Loader/loader';
+import PacmanLoader from '../../components/PacmanLoader/PacmanLoader';
 
 export default function Contato({usaAssunto}){
     const[nome, setNome] = useState('');
@@ -56,7 +57,7 @@ export default function Contato({usaAssunto}){
 
     if(loading)
         return(
-            <Loader/>
+            <PacmanLoader/>
         )
 
     return(
