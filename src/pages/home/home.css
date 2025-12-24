@@ -1,3 +1,31 @@
 .posts{
     padding-top: var(--triple-default-spacing);
 }
+
+.presentation{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.presentation-message{
+    margin-bottom: 40px;
+}
+
+.presentation-avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    border: 2px solid var(--border-color);
+    margin-bottom: var(--double-default-spacing);
+}
+
+.presentation-avatar img{
+    width: 100%;
+}
