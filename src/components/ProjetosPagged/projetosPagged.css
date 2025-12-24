@@ -14,14 +14,16 @@
 .projetos-item-imagem{
     display: flex;
     justify-content: center;
+    width: 15rem;
 }
 
 .projetos-item-imagem img {
-    width: 20rem;
-    height: 20rem;
+    max-width: 20rem;
+    max-height: 20rem;
     margin-right: 1rem;
     border-radius: .5rem;
     cursor: pointer;
+    object-fit: contain;
 }
 .projetos-item-descricao {
     display: flex;
@@ -71,8 +73,8 @@
         width: 100%;
     }
     .projetos-item-imagem img {
-        width: 10rem;
-        height: 10rem;
+        max-width: 10rem;
+        max-height: 10rem;
         margin-right: 1rem;
         border-radius: .5rem;
     }
