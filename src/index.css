@@ -78,10 +78,10 @@
 
   [data-theme='light'] {
     /* Cor do background */
-    --background-color: #dddddd;
+    --background-color: #f0f0f0;
     
     /* Cor do header, footer e outros elementos principais */
-    --primary-color: #f0f0f0;
+    --primary-color: #e0e0e0;
     
     /* Cor dos painéis */
     --secundary-color: #e0e0e0;
