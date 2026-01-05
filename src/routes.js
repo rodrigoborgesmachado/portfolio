@@ -6,6 +6,7 @@ import Projeto from './pages/projeto/projeto';
 import ProjetosPagged from './components/ProjetosPagged/projetosPagged';
 import Contato from './pages/contato/contato';
 import Repositorio from './pages/repositorio/repositorio';
+import Admin from './pages/admin/admin';
 
 export default function RoutesApp(){
     return(
@@ -18,6 +19,7 @@ export default function RoutesApp(){
                 <Route path='/postagens' element={<ProjetosPagged resum={false} tipo={1}/>}/>
                 <Route path='/contatos/assuntos' element={<Contato usaAssunto={true}/>}/>
                 <Route path='/contatos/' element={<Contato usaAssunto={false}/>}/>
+                <Route path='/admin' element={<Admin/>}/>
                 <Route path='/' element={<Home/>}/>
             </Routes>
             <Footer/>
