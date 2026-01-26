@@ -9,3 +9,20 @@
     display: flex;
     gap: var(--default-spacing);
 }
+
+.strava-badge- {
+    display: inline-block;
+    height: 24px;
+}
+
+.strava-badge- img {
+    visibility: hidden;
+    height: 24px;
+}
+
+
+.strava-badge-follow {
+    height: 24px;
+    width: 24px;
+    background: url(https://badges.strava.com/echelon-sprite-24.png) no-repeat 0 0;
+}

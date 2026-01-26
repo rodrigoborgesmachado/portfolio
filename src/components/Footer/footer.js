@@ -31,6 +31,14 @@ export default function Footer(){
                 <LinkedInIcon className='option-link' onClick={() => openUrl('https://www.linkedin.com/in/rodrigoborgesmachado/')}/>
                 <WhatsAppIcon className='option-link' onClick={() => openUrl('https://wa.me/+5534999798100')}/>
                 <GitHubIcon className='option-link' onClick={() => openUrl('https://github.com/rodrigoborgesmachado')}/>
+                <a
+                    href="https://strava.com/athletes/165837732"
+                    className="strava-badge- strava-badge-follow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img src="https://badges.strava.com/echelon-sprite-24.png" alt="Strava" />
+                </a>
             </div>
         </div>
     )
