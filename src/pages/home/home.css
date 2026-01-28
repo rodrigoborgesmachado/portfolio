@@ -29,3 +29,55 @@
 .presentation-avatar img{
     width: 100%;
 }
+
+.about{
+    padding: var(--triple-default-spacing);
+    display: flex;
+    justify-content: center;
+}
+
+.about-content{
+    max-width: var(--default-max-width);
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-spacing);
+}
+
+.about-content p{
+    text-align: justify;
+}
+
+.about-highlights{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--default-spacing);
+    padding-top: var(--default-spacing);
+}
+
+.about-highlights li{
+    border: 1px solid var(--border-color);
+    border-radius: var(--default-border-radius);
+    padding: 6px 12px;
+    font-size: 0.95rem;
+}
+
+.about-ctas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--default-spacing);
+    padding-top: var(--default-spacing);
+}
+
+.about-cta{
+    padding: 8px 16px;
+    border-radius: var(--default-border-radius);
+    background-color: var(--button-color-primary);
+    color: var(--text-color-button);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.about-cta:hover{
+    background-color: var(--button-color-primary-hover);
+}

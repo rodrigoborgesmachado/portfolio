@@ -65,3 +65,10 @@
 .form-contact-line-item-submit button:hover {
     background-color: var(--transient-color-second);
 }
+
+.form-contact-privacy{
+    padding: 0 var(--double-default-spacing) var(--double-default-spacing);
+    font-size: 0.9rem;
+    color: var(--text-color-primary);
+    text-align: left;
+}

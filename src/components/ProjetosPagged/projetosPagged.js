@@ -94,7 +94,15 @@ export default function ProjetosPagged({resum = true, tipo=0}){
                                 <div className="projetos-item-descricao">
                                     <div className='projetos-item-titulo'>
                                         <h3 className="option-link" onClick={() => abrirProjeto(item.id)}>{item.titulo}</h3>
-                                        <a className="option-link" target='_blank' href={item.link}>Acessar</a>
+                                        <a
+                                            className="option-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            href={item.link}
+                                            title="Abre em nova aba"
+                                        >
+                                            {tipo == 0 ? 'Abrir projeto ' : 'Abrir artigo '}<span aria-hidden="true">(↗)</span>
+                                        </a>
                                     </div>
                                     <sub>Publicação: {formatDate(item.created)}</sub>
                                     <h4 className="option-link" dangerouslySetInnerHTML={createMarkup(item.intro)}></h4>

@@ -107,6 +107,9 @@ export default function Contato({usaAssunto}){
                             <button  onClick={() => submit()}>Enviar</button>
                         </div>
                     </div>
+                    <div className='form-contact-privacy'>
+                        As informações enviadas aqui são usadas apenas para responder sua mensagem. Não compartilhamos dados com terceiros.
+                    </div>
                 </div>
             </div>
         </div>

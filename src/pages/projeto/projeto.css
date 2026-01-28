@@ -62,7 +62,69 @@
 }
 
 .projeto-title, .projeto-download-icon{
+    cursor: default;
+}
+
+.projeto-header{
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-spacing);
+    margin-bottom: var(--double-default-spacing);
+}
+
+.projeto-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--default-spacing);
+}
+
+.projeto-cta{
+    padding: 8px 16px;
+    border-radius: var(--default-border-radius);
+    text-decoration: none;
+    color: var(--text-color-button);
+    background-color: var(--button-color-primary);
+    transition: background-color 0.2s ease;
+}
+
+.projeto-cta--secondary{
+    background-color: var(--button-color-secondary);
+}
+
+.projeto-cta:hover{
+    background-color: var(--button-color-primary-hover);
+}
+
+.projeto-cta--secondary:hover{
+    background-color: var(--transient-color-second);
+}
+
+.voltar-link{
+    width: fit-content;
+    background: transparent;
+    border: none;
+    color: var(--text-color-primary);
     cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.projeto-chips{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--default-spacing);
+    margin-bottom: var(--double-default-spacing);
+}
+
+.projeto-chip{
+    border: 1px solid var(--border-color);
+    border-radius: var(--default-border-radius);
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+
+.projeto-chip-label{
+    font-weight: 600;
 }
 
 .enviarFeedBack{

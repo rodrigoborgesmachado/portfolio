@@ -75,7 +75,7 @@ export default function RepositoryPagged(){
         <div className="repositoriosPagged">
             <div className='apresentacao-repositorios' id='repositorios'>
                 <h2 className='option-link' onClick={() => openRepositorio()}>
-                    Respositórios Git ({quantity}):
+                    Repositórios Git ({quantity}):
                 </h2>
             </div>
             {
@@ -86,7 +86,15 @@ export default function RepositoryPagged(){
                                 <div className="projetos-item-descricao">
                                     <div className='projetos-item-titulo'>
                                         <h3 className="option-link" onClick={() => abrirProjeto(item.id)}>{item.titulo}</h3>
-                                        <a className="option-link" target='_blank' href={item.link}>Acessar</a>
+                                        <a
+                                            className="option-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            href={item.link}
+                                            title="Abre em nova aba"
+                                        >
+                                            Abrir <span aria-hidden="true">(↗)</span>
+                                        </a>
                                     </div>
                                     <sub>Publicação: {formatDate(item.created)}</sub>
                                     <h4 className="option-link" dangerouslySetInnerHTML={createMarkup(item.intro)}></h4>

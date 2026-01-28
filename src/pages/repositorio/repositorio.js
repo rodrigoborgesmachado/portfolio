@@ -2,8 +2,6 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import api from "../../services/api";
-import Loader from '../../components/Loader/loader';
-import DownloadIcon from '@mui/icons-material/Download';
 import ReadmeComponent from "../../components/ReadmeComponent/readmeComponet";
 import PacmanLoader from "../../components/PacmanLoader/PacmanLoader";
 
@@ -42,6 +40,10 @@ export default function Repositorio({}){
         navigate(`/contatos/assuntos`, {replace: true});
     }
 
+    const externalLink = repositorio?.link;
+    const repoLink = repositorio?.linkRepositorio || repositorio?.repositorio || repositorio?.repo || repositorio?.github || repositorio?.repository;
+    const showRepoLink = repoLink && repoLink !== externalLink;
+
     if(loadding){
         return(
             <PacmanLoader/>
@@ -50,6 +52,35 @@ export default function Repositorio({}){
 
     return(
         <div className="projeto-full">
+            <div className='projeto-header'>
+                <button className='voltar-link' type='button' onClick={() => navigate(-1)}>
+                    Voltar
+                </button>
+                <div className='projeto-actions'>
+                    {externalLink ? (
+                        <a
+                            className='projeto-cta projeto-cta--primary'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            href={externalLink}
+                            title='Abre em nova aba'
+                        >
+                            Abrir <span aria-hidden='true'>(↗)</span>
+                        </a>
+                    ) : null}
+                    {showRepoLink ? (
+                        <a
+                            className='projeto-cta projeto-cta--secondary'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            href={repoLink}
+                            title='Abre em nova aba'
+                        >
+                            Ver c?digo <span aria-hidden='true'>(↗)</span>
+                        </a>
+                    ) : null}
+                </div>
+            </div>
             
             <ReadmeComponent info={repositorio.descricao}/>
             <div className='projeto-link'>
@@ -60,7 +91,7 @@ export default function Repositorio({}){
 
             <div className='projeto-link'>
                 <h4>
-                    Acesse: <a target='_blank' href={repositorio.link}>{repositorio.link}</a>
+                    Acesse: <a target='_blank' rel='noopener noreferrer' title='Abre em nova aba' href={repositorio.link}>Abrir <span aria-hidden='true'>(↗)</span></a>
                 </h4>
             </div>
             
