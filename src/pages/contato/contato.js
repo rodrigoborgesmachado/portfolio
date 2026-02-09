@@ -68,7 +68,7 @@ export default function Contato({usaAssunto}){
                 </div>
                 <div className='form-contact'>
                     <div className='form-contact-message'>
-                        <h3>Me envie um email em rodrigoborgesmachado@gmail.com, ou use o formulário abaixo!</h3>
+                        <h3>Me envie um email em rodrigomachado@sunsalesystem.com, ou use o formulário abaixo!</h3>
                     </div>
                     <div className='form-contact-line'>
                         <div className='form-contact-line-item'>
