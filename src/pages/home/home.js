@@ -4,9 +4,7 @@ import RepositoryPagged from '../../components/RepositoryPagged/repositoryPagged
 
 export default function Home(){
     const profileImages = [
-        'https://www.sunsalesystem.com.br/img/rodrigo-1.jpeg',
-        'https://www.sunsalesystem.com.br/img/rodrigo-2.jpeg',
-        'https://www.sunsalesystem.com.br/img/rodrigo-3.jpeg',
+        'https://www.sunsalesystem.com.br/img/rodrigo-1.png',
     ];
     const profileImage = profileImages[Math.floor(Math.random() * profileImages.length)];
     const linkedInUrl = 'https://www.linkedin.com/in/rodrigoborgesmachado/';
