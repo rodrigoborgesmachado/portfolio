@@ -1,28 +1,29 @@
 .footer{
-    margin-top: calc(2 * var(--triple-default-spacing));
     width: 100%;
+    margin-top: 4rem;
+    padding: 1.5rem 0 2rem;
+    border-top: 1px solid var(--rule-color);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
-.footer-icones{
+.footer-links{
     display: flex;
-    gap: var(--default-spacing);
+    flex-wrap: wrap;
+    gap: 0.4rem 1.1rem;
 }
 
-.strava-badge- {
-    display: inline-block;
-    height: 24px;
+.footer-links a{
+    color: var(--text-muted);
+    text-decoration: none;
 }
 
-.strava-badge- img {
-    visibility: hidden;
-    height: 24px;
-}
-
-
-.strava-badge-follow {
-    height: 24px;
-    width: 24px;
-    background: url(https://badges.strava.com/echelon-sprite-24.png) no-repeat 0 0;
+.footer-links a:hover{
+    color: var(--text-color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }

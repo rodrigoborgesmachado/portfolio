@@ -1,74 +1,122 @@
-.form-contact{
+.contato h1{
+    margin-bottom: 0.5rem;
+}
+
+.contato-intro{
+    max-width: 58ch;
+    color: var(--text-muted);
+}
+
+.contato-canais{
+    margin-top: 2rem;
+    border-top: 1px solid var(--rule-color);
+}
+
+.contato-canal{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 1.5rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--rule-color);
 }
 
-.form-contact-message{
-    padding: var(--triple-default-spacing) 0 var(--triple-default-spacing) 0;
-    text-align: justify;
-    font-weight: normal;
-    text-decoration: none;
+.contato-canal-rotulo{
+    width: 6.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
-.form-contact-line{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.contato-canal-valor{
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
-.form-contact-line-item{
-    width: 50%;
-    padding: var(--double-default-spacing);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.contato-canal a{
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-.form-contact-line-item input{
-    padding: var(--default-spacing);
-    border-radius: var(--default-border-radius);
-}
-
-.form-contact-line-item-message input{
-    width: 100%;
-    padding: var(--default-spacing);
-    border-radius: var(--default-border-radius);
-}
-
-.form-contact-line-item-message{
-    width: 100%;
-    height: 100%;
-    padding: var(--double-default-spacing);
-}
-
-.form-contact-line-item-message textarea{
-    width: 100%;
-    height: 30vh;
-}
-
-.form-contact-line-item-submit{
-    width: 100%;
-    padding: var(--default-spacing);
-    display: flex;
-    justify-content: right;
-}
-
-.form-contact-line-item-submit button{
-    padding: var(--default-spacing);
-    border-radius: var(--default-border-radius);
-    color: #fff;
-    background-color: var(--button-color-primary);
+.contato-copiar{
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font: inherit;
+    font-size: 0.875rem;
+    color: var(--text-muted);
     cursor: pointer;
 }
 
-  
-.form-contact-line-item-submit button:hover {
-    background-color: var(--transient-color-second);
+.contato-copiar:hover{
+    color: var(--text-color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-.form-contact-privacy{
-    padding: 0 var(--double-default-spacing) var(--double-default-spacing);
+.contato-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-top: 3rem;
+    max-width: 640px;
+}
+
+.contato-form h2{
+    font-size: 1.35rem;
+}
+
+.contato-assunto{
+    color: var(--text-muted);
+}
+
+.contato-linha{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.1rem;
+}
+
+.contato-campo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
     font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.contato-campo input,
+.contato-campo textarea{
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--rule-color);
+    border-radius: 6px;
+    background-color: transparent;
     color: var(--text-color-primary);
-    text-align: left;
+    font: inherit;
+    font-size: 1rem;
+}
+
+.contato-campo input:focus,
+.contato-campo textarea:focus{
+    outline: 2px solid var(--accent-color);
+    outline-offset: 1px;
+    border-color: transparent;
+}
+
+.contato-enviar .btn{
+    font: inherit;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+}
+
+.contato-privacidade{
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 640px){
+    .contato-canal-rotulo{
+        width: 100%;
+    }
 }

@@ -1,29 +1,21 @@
-import React from 'react';
 import './PacmanLoader.css';
+import { useIdioma } from '../../context/IdiomaContext/idiomaContext';
 
-export default function PacmanLoader({
-  size = 64,
-  mouthAngle = 40,
-  dots = 7
-}) {
-  const pellets = Array.from({ length: dots }, (_, i) => i);
+// Mesmo loader do Tabuada Divertida: boca animada em duas metades e bolinhas sumindo na boca.
+export default function PacmanLoader({ size = 64, dots = 5 }) {
+  const { t } = useIdioma();
+
   return (
-    <div className='loader-container'>
-      <div
-        className="pacman-loader"
-        role="status"
-        aria-label="Carregando…"
-        style={{
-          '--size': `${size}px`,
-          '--mouth': `${mouthAngle}deg`,
-          '--dots': dots
-        }}
-      >
-        <div className="pacman" />
-        <div className="pellets" aria-hidden="true">
-          {pellets.map(i => <span key={i} className="pellet" style={{ '--i': i }} />)}
+    <div className="loader-container" role="status">
+      <div className="pacman-loader" aria-hidden={true} style={{ '--size': `${size}px`, '--dots': dots }}>
+        <div className="pellets">
+          {Array.from({ length: dots }, (_, i) => (
+            <span key={i} className="pellet" style={{ '--i': i }} />
+          ))}
         </div>
+        <div className="pacman" />
       </div>
+      <span className="pacman-loader-texto">{t.carregando}</span>
     </div>
   );
 }

@@ -1,17 +1,69 @@
-
 .navBar{
-    padding: var(--default-spacing);
     display: flex;
-    width: 100%;
-    background-color: transparent;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--border-color);
-    height: var(--header-height);
-  }
-
-  .navBar-options{
-    display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 24px
-  }
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    width: 100%;
+    padding: 1.5rem 0 1.25rem;
+    border-bottom: 1px solid var(--rule-color);
+}
+
+.navBar a{
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.navBar-nome{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.navBar-options{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.25rem;
+    font-size: 1.05rem;
+}
+
+.navBar-link:hover,
+.navBar-link.active{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.navBar-idioma{
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+.navBar-barra{
+    margin: 0 0.15rem;
+}
+
+.navBar-idioma button{
+    padding: 0 0.1rem;
+    border: 0;
+    background: transparent;
+    color: var(--text-muted);
+    font: inherit;
+    cursor: pointer;
+}
+
+.navBar-idioma button.ativo{
+    color: var(--text-color-primary);
+    font-weight: 600;
+}
+
+.navBar-idioma button:hover{
+    color: var(--text-color-primary);
+}
+
+@media (max-width: 640px){
+    .navBar-options{
+        gap: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}

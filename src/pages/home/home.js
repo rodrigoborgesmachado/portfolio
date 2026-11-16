@@ -1,93 +1,67 @@
 import './home.css';
-import ProjetosPagged from '../../components/ProjetosPagged/projetosPagged';
-import RepositoryPagged from '../../components/RepositoryPagged/repositoryPagged';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import ListaProjetos from '../../components/ListaProjetos/listaProjetos';
+import PublicacoesSelecionadas from '../../components/PublicacoesSelecionadas/publicacoesSelecionadas';
+import { links } from '../../content/perfil';
+import { useIdioma } from '../../context/IdiomaContext/idiomaContext';
 
 export default function Home(){
-    const profileImages = [
-        'https://www.sunsalesystem.com.br/img/rodrigo-1.png',
-    ];
-    const profileImage = profileImages[Math.floor(Math.random() * profileImages.length)];
-    const linkedInUrl = 'https://www.linkedin.com/in/rodrigoborgesmachado/';
-    const githubUrl = 'https://github.com/rodrigoborgesmachado';
+    const profileImage = 'https://www.sunsalesystem.com.br/img/rodrigo-1.png';
+    const location = useLocation();
+    const { t, c } = useIdioma();
+    const apresentacao = c.apresentacao;
+
+    // Rola até a âncora do menu. A lista da API carrega depois e muda a altura
+    // da página, então reposiciona enquanto o layout muda (até o usuário rolar ou 4s).
+    useEffect(() => {
+        if (!location.hash) return;
+        const id = location.hash.slice(1);
+        const rolar = (behavior) => document.getElementById(id)?.scrollIntoView({ behavior });
+        rolar('smooth');
+
+        const observer = new ResizeObserver(() => rolar('auto'));
+        observer.observe(document.body);
+        const parar = () => observer.disconnect();
+        const timer = setTimeout(parar, 4000);
+        window.addEventListener('wheel', parar, { once: true });
+        window.addEventListener('touchmove', parar, { once: true });
+        return () => {
+            parar();
+            clearTimeout(timer);
+            window.removeEventListener('wheel', parar);
+            window.removeEventListener('touchmove', parar);
+        };
+    }, [location]);
 
     return(
-        <div className="container">
-            <div className="presentation">
-                <div className="presentation-avatar">
-                    <img src={profileImage} alt="Rodrigo Machado" />
-                </div>
-                <div className='presentation-message'>
-                    <h1>
-                        Hello,
-                    </h1>
-                    <h3>
-                        Seja bem-vindo ao habitat natural de Rodrigo Machado
-                    </h3>
-                </div>
-            </div>
-            <section className="about" aria-labelledby="sobre-mim">
-                <div className="about-content">
-                    <h2 id="sobre-mim">Sobre mim</h2>
-
-                    <p>
-                        Sou desenvolvedor Full Stack, com foco em .NET no backend e React no frontend,
-                        e gosto de construir sistemas que façam sentido de ponta a ponta — da modelagem
-                        ao deploy. Tenho um cuidado especial com arquitetura, organização de código e
-                        soluções que sejam fáceis de evoluir ao longo do tempo, seguindo princípios de
-                        Clean Architecture e boas práticas de engenharia.
-                    </p>
-
-                    <p>
-                        Ao longo dos anos, trabalhei em projetos bem diferentes entre si: aplicações
-                        corporativas, sistemas educacionais, ferramentas internas e produtos pessoais.
-                        Muitos deles nasceram para resolver problemas reais do dia a dia — estudar melhor,
-                        organizar tarefas, visualizar dados ou simplificar processos — e acabaram virando
-                        projetos completos, em produção e em constante evolução.
-                    </p>
-
-                    <p>
-                        Fora do código, sou goleiro de futsal e tenho focado cada vez mais no pedal,
-                        que virou parte importante da minha rotina. Gosto da disciplina do esporte,
-                        da constância e da ideia de evolução contínua — coisas que, no fim das contas,
-                        também levo para o desenvolvimento de software.
-                    </p>
-
-                    <ul className="about-highlights">
-                        <li>Full Stack (.NET + React)</li>
-                        <li>Clean Architecture</li>
-                    </ul>
-
-                    <div className="about-ctas">
-                        <a
-                            className="about-cta"
-                            href={linkedInUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Abre em nova aba"
-                        >
-                            LinkedIn
-                        </a>
-                        <a
-                            className="about-cta"
-                            href={githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Abre em nova aba"
-                        >
-                            GitHub
-                        </a>
+        <main className="pagina home">
+            <section className="intro" aria-labelledby="intro-nome">
+                <p className="intro-saudacao">{apresentacao.saudacao}</p>
+                <div className="intro-cabecalho">
+                    <img className="intro-foto" src={profileImage} alt={t.fotoAlt} />
+                    <div>
+                        <h1 id="intro-nome">{apresentacao.nome}</h1>
+                        <p className="intro-linha">{apresentacao.linha}</p>
                     </div>
                 </div>
+                {apresentacao.paragrafos.map((texto, i) => <p key={i}>{texto}</p>)}
+                <p className="intro-links">
+                    <Link to="/experiencia">{t.menu.experiencia}</Link>
+                    <a href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href={links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                    {links.curriculos.map((cv) => (
+                        <a key={cv.href} href={cv.href} target="_blank" rel="noopener noreferrer">
+                            {t.curriculo} {cv.idioma}
+                        </a>
+                    ))}
+                    <a href={`mailto:${links.email}`}>{links.email}</a>
+                </p>
             </section>
-            <div className='projects'>
-                <ProjetosPagged tipo={0}/>
-            </div>
-            <div className='posts'>
-                <ProjetosPagged tipo={1}/>
-            </div>
-            <div className='posts'>
-                <RepositoryPagged/>
-            </div>
-        </div>
+
+            <ListaProjetos/>
+
+            <PublicacoesSelecionadas/>
+        </main>
     )
 }

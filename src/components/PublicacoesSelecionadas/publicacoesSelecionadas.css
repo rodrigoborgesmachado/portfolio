@@ -1,0 +1,44 @@
+.publicacoes{
+    padding-top: 3.5rem;
+}
+
+.publicacoes h2{
+    margin-bottom: 0.75rem;
+}
+
+.publicacoes-lista{
+    list-style: none;
+}
+
+.publicacoes-lista li{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px dotted var(--rule-color);
+}
+
+.publicacoes-lista a{
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.publicacoes-lista a:hover{
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.publicacoes-lista span{
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.publicacoes-todas{
+    display: inline-block;
+    margin-top: 0.9rem;
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    text-underline-offset: 3px;
+}

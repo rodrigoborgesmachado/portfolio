@@ -1,6 +1,6 @@
 :root {
     /* Cor do background */
-    --background-color: #1E1E1E;
+    --background-color: #181816;
   
     /* Cor do header, footer e outros elementos principais */
     --primary-color: #161623;
@@ -11,16 +11,21 @@
     --secundary-color-hover: #383838;
   
     /* Cor do texto nos painéis */
-    --text-color-primary-light: #e2e8fc;
-    --text-color-primary: #e1e9f0;
+    --text-color-primary-light: #c9c5bc;
+    --text-color-primary: #e9e6df;
     --text-color-secondary: #FFFFFF;
-    --text-color-accent: #2CDEBF;
+    --accent-color: #8cc5a4;
+    --text-muted: #a19c92;
+    --rule-color: #35342f;
+    --tile-color: #d3cfc6;
+    --hover-color: #2e2d29;
+    --text-color-accent: var(--accent-color);
     --text-color-code: #426278;
     --text-color-button: #FFFFFF;
 
     /* Cores do botão principal */
-    --button-color-primary: #8A2BE2;
-    --button-color-primary-hover: #4B0082;
+    --button-color-primary: #3f7f5f;
+    --button-color-primary-hover: #346b50;
     --button-color-primary-wrong: #B00020;
     --button-color-primary-wrong-hover: #CF6679;
   
@@ -39,7 +44,7 @@
     --color-surface: #FAFDFA;
     --color-surface-variant: #1F1F1F;
   
-    --loader-color: #8A2BE2;
+    --loader-color: #8cc5a4;
     --panel-border-color : #eaebeb;
 
     --border-color: gray;
@@ -59,13 +64,13 @@
     --default-border-radius:8px;
     --default-border-radius-extra:16px;
 
-    --transient-color-primary: #8A2BE2;
-    --transient-color-second: #4B0082;
+    --transient-color-primary: #3f7f5f;
+    --transient-color-second: #346b50;
     --transient-color-third: #B00020;
     --transient-color-fourfh: #CF6679;
 
     --loader-background-color: #3c3c3c;
-    --loader-color: #bb86fc;
+    --loader-color: #8cc5a4;
 
     --xl6: 4rem;
   }
@@ -78,7 +83,7 @@
 
   [data-theme='light'] {
     /* Cor do background */
-    --background-color: #f0f0f0;
+    --background-color: #f6f4ef;
     
     /* Cor do header, footer e outros elementos principais */
     --primary-color: #e0e0e0;
@@ -89,16 +94,21 @@
     --secundary-color-hover: #d0d0d0;
     
     /* Cor do texto nos painéis */
-    --text-color-primary-light: #2e4e4e;
-    --text-color-primary: #1e1e1e;
+    --text-color-primary-light: #5f5b53;
+    --text-color-primary: #1f1e1b;
     --text-color-secondary: #333333;
-    --text-color-accent: #007bff;
+    --accent-color: #2f6b4f;
+    --text-muted: #6b675f;
+    --rule-color: #dcd8cf;
+    --tile-color: #ebe8e1;
+    --hover-color: #e8e4dc;
+    --text-color-accent: var(--accent-color);
     --text-color-code: #3d3d3d;
     --text-color-button: #ffffff;
   
     /* Cores do botão principal */
-    --button-color-primary: #007bff;
-    --button-color-primary-hover: #0056b3;
+    --button-color-primary: #2f6b4f;
+    --button-color-primary-hover: #25573f;
     --button-color-primary-wrong: #dc3545;
     --button-color-primary-wrong-hover: #c82333;
     
@@ -117,7 +127,7 @@
     --color-surface: #ffffff;
     --color-surface-variant: #f0f0f0;
     
-    --loader-color: #007bff;
+    --loader-color: #2f6b4f;
     --panel-border-color : #cccccc;
     
     --modal-background-color: rgba(255, 255, 255, 0.9);
@@ -130,13 +140,13 @@
     
     --default-max-width: 1080px;
   
-    --transient-color-primary: #007bff;
-    --transient-color-second: #0056b3;
+    --transient-color-primary: #2f6b4f;
+    --transient-color-second: #25573f;
     --transient-color-third: #dc3545;
     --transient-color-fourfh: #c82333;
 
     --loader-background-color: #f3f3f3;
-    --loader-color: #1976d2;
+    --loader-color: #2f6b4f;
   }
   
   
@@ -166,14 +176,39 @@
 
   .presentation{
     width: 100%;
-    height: calc(100vh - var(--header-height));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
-  .presentation h1{
-    font-size: var(--xl6);
+  /* Botões padrão do site */
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    border-radius: var(--default-border-radius);
+    border: 2px solid var(--button-color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-primary{
+    background-color: var(--button-color-primary);
+    color: var(--text-color-button);
+  }
+
+  .btn-primary:hover{
+    background-color: var(--button-color-primary-hover);
+    border-color: var(--button-color-primary-hover);
+  }
+
+  .btn-secondary{
+    background-color: transparent;
+    color: var(--text-color-primary);
+  }
+
+  .btn-secondary:hover{
+    background-color: var(--button-color-primary);
+    color: var(--text-color-button);
   }
   
   .option-link {
@@ -218,4 +253,67 @@
 
   .input-pattern:focus {
     border-color: var(--focus-border-color); 
+  }
+  /* ===== Layout geral (redesign) ===== */
+  body{
+    font-family: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2{
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+  }
+
+  h2{
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .App{
+    max-width: 1060px;
+    padding: 0 clamp(20px, 4vw, 48px);
+    align-items: stretch;
+  }
+
+  .pagina{
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .pagina:not(.home){
+    padding-top: 3rem;
+  }
+
+  .pagina h1{
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    line-height: 1.2;
+  }
+
+  a{
+    color: inherit;
+  }
+
+  ::selection{
+    background-color: var(--accent-color);
+    color: var(--background-color);
+  }
+
+  /* Escala maior em telas largas: tudo que usa rem cresce junto */
+  html{
+    font-size: 16px;
+  }
+
+  @media (min-width: 1100px){
+    html{
+      font-size: 17px;
+    }
+  }
+
+  @media (min-width: 1500px){
+    html{
+      font-size: 18px;
+    }
   }
